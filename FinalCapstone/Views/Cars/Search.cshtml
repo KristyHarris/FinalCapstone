@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Search";
+}
+
+<h2>Car Search</h2>
+<br/>
+<br />
+<h5>Make</h5>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Cars" asp-action="SearchResults" method="Post">
+            <div class="form-group">
+                <label type="text" name="make" class="control-label"></label>
+                <select type="text" name="make" class="form-control">
+                    <option></option>
+                    <option>Chevrolet</option>
+                    <option>Ford</option>
+                    <option>Honda</option>
+                    <option>Subaru</option>
+                    <option>Toyota</option>
+                </select>
+            </div>
+        <br />
+        <h5>Model</h5>
+            <div class="form-group">
+                <label type="text" name="model" class="control-label"></label>
+                <select type="text" name="model" class="form-control">
+                    <option></option>
+                    <option>Camry</option>
+                    <option>Civic</option>
+                    <option>CRV</option>
+                    <option>Edge</option>
+                    <option>Focus</option>
+                    <option>Malibu</option>
+                    <option>Outback</option>
+                    <option>RAV4</option>
+                    <option>Silverado 1500</option>
+                </select>
+            </div>
+        <br/>
+        <h5>Year</h5>
+            <div class="form-group">
+                <label type="number" name="year" class="control-label"></label>
+                <select type="number" name="year" class="form-control">
+                    <option></option>
+                    <option>2012</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                </select>
+            </div>
+
+        <br />
+        <h5>Color</h5>
+    
+            <div class="form-group">
+                <label type="text" name="color" class="control-label"></label>
+                <select type="text" name="color" class="form-control">
+                    <option></option>
+                    <option>Black</option>
+                    <option>Blue</option>
+                    <option>Red</option>
+                    <option>Silver</option>
+                    <option>Tan</option>
+                    <option>White</option>
+                </select>
+            </div>
+            <div>
+                <input type="submit" value="Search" asp-action="SearchResults" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
